@@ -1,0 +1,9 @@
+@import '../../styles/variables/breakpoints';
+
+.dw-container {
+  width: 100%;
+
+  padding: 30px 40px;
+
+  max-width: $breakpoint-2xl;
+}

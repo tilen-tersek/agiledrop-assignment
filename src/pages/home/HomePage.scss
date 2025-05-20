@@ -1,0 +1,54 @@
+@import '../../styles/variables/breakpoints';
+
+.hp-container{
+  display:grid;
+  grid-template-rows: 4rem auto;
+
+  .hp-title{
+    font-weight: 500;
+    font-size: 1.6em;
+  }
+
+  .hp-card{
+    background: white;
+  }
+
+  .hp-content{
+    display:grid;
+    gap: 1rem;
+  }
+
+  // Mobile
+  @media screen and (max-width: $breakpoint-sm) {
+    .hp-content{
+      grid-template-columns: 1fr;
+    }
+  }
+  // Mobile, Tablet
+  @media screen and (min-width: $breakpoint-md) {
+    .hp-content{
+      grid-template-columns: repeat(2, 1fr);
+    }
+  }
+
+  // Tablet
+  @media screen and (min-width: $breakpoint-lg) {
+    .hp-content{
+      grid-template-columns: repeat(3, 1fr);
+    }
+  }
+
+  // Desktop
+  @media screen and (min-width: $breakpoint-xl) {
+    .hp-content{
+      grid-template-columns: repeat(4, 1fr);
+    }
+  }
+
+  // Desktop
+  @media screen and (min-width: $breakpoint-2xl) {
+    .hp-content{
+      grid-template-columns: repeat(5, 1fr);
+    }
+  }
+}
