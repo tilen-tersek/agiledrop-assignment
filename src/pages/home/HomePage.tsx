@@ -1,5 +1,6 @@
 import HomeWrapper from "../../layouts/home/HomeWrapper.tsx";
 import "./HomePage.scss";
+import MovieCard from "../../components/home/movie-card/MovieCard.tsx";
 
 const HomePage = () => {
   const movies = new Array(120).fill("Movie");
@@ -12,10 +13,8 @@ const HomePage = () => {
           <div className="hp-filter card">Filters</div>
         </div>
         <div className="hp-content">
-          {movies.map((movie, index) => (
-            <div className="hp-movie card">
-              {movie} {index + 1}
-            </div>
+          {movies.map(() => (
+            <MovieCard />
           ))}
         </div>
       </HomeWrapper>
