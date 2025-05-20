@@ -10,14 +10,35 @@
   }
 
   .hp-card{
-    background: white;
+    background: var(--text-contrast);
   }
 
   .hp-content{
     display:grid;
-    gap: 1rem;
+    gap: 1.5rem;
+    grid-template-rows: 1fr 1fr;
   }
 
+  .hp-load-more{
+    border-radius: 8px;
+    width:100%;
+    outline: none;
+    font-size: 1.5rem;
+    font-weight: 700;
+    background: var(--button-primary);
+    color: var(--text-contrast);
+    &:hover{
+      border: 1px solid transparent;
+    }
+  }
+  .hp-no-movies{
+    width:100%;
+    text-align: center;
+    grid-column: span 2;
+    display:flex;
+    align-items: center;
+    justify-content: center;
+  }
   // Mobile
   @media screen and (max-width: $breakpoint-sm) {
     .hp-content{

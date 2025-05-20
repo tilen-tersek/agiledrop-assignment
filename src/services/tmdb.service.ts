@@ -7,7 +7,6 @@ export const fetchMoviesByGenres = async (
   genreIds: number[],
   page = 1,
 ): Promise<Movie[]> => {
-  console.log(import.meta.env.VITE_TMDB_API_KEY);
   const genreParam = genreIds.join(",");
 
   const res = await fetch(
