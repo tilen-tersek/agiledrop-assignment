@@ -15,7 +15,12 @@ interface IProps {
 
 const Filters = ({ genres, onGenresChange }: IProps) => {
   const [open, setOpen] = useState(false);
+  const [lastSentGenres, setLastSentGenres] = useState<Genre[]>([]);
   const [activeGenres, setActiveGenres] = useState<Genre[]>([]);
+
+  const haveGenresChanged = () => {
+    return JSON.stringify(lastSentGenres) !== JSON.stringify(activeGenres);
+  };
 
   const toggleGenre = (genre: Genre) => {
     setActiveGenres((prev) =>
@@ -27,6 +32,7 @@ const Filters = ({ genres, onGenresChange }: IProps) => {
 
   const search = () => {
     onGenresChange(activeGenres);
+    setLastSentGenres(activeGenres);
   };
 
   return (
@@ -56,7 +62,7 @@ const Filters = ({ genres, onGenresChange }: IProps) => {
             <button
               className="f-button"
               onClick={() => search()}
-              disabled={activeGenres.length === 0}
+              disabled={!haveGenresChanged()}
             >
               Search
             </button>
