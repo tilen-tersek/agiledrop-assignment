@@ -1,4 +1,4 @@
-@import '../../../styles/variables/breakpoints';
+@use '../../../styles/variables/breakpoints' as *;
 
 .mc-container{
   display: flex;
