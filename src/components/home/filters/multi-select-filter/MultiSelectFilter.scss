@@ -1,0 +1,20 @@
+.msf-container{
+  padding: 4px 12px;
+  border-radius: 50px;
+  border: 1px solid #9e9e9e;
+  cursor: pointer;
+  -webkit-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+
+  &:hover {
+    background: #01b4e4;
+    color: white;
+  }
+
+  &.active{
+    background: #01b4e4;
+    border: 1px solid #01b4e4;
+    color: white;
+  }
+}

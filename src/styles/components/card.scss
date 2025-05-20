@@ -1,4 +1,4 @@
-@import '../../styles/variables/measurements';
+@use '../variables/measurements' as *;
 
 .card {
   border-radius: $card-border-radius;
