@@ -1,9 +1,13 @@
 @use '../../styles/variables/breakpoints' as *;
 
+$padding-y: 30px;
+$padding-x: 40px;
+
 .dw-container {
   width: 100%;
+  min-height: calc(100vh - 2 * $padding-y);
 
-  padding: 30px 40px;
+  padding: $padding-y $padding-x;
 
   max-width: $breakpoint-2xl;
 }

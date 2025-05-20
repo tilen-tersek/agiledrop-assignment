@@ -6,21 +6,27 @@ import {
 } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import MultiSelectFilter from "./multi-select-filter/MultiSelectFilter.tsx";
+import type { Genre } from "../../../types/api/tmdb/tmdb.types.ts";
 
-const genreOptions = ["Action", "Drama", "Comedy", "Horror", "Sci-Fi"];
+interface IProps {
+  genres: Genre[];
+  onGenresChange: (activeGenres: Genre[]) => void;
+}
 
-const Filters = () => {
+const Filters = ({ genres, onGenresChange }: IProps) => {
   const [open, setOpen] = useState(false);
-  const [activeGenres, setActiveGenres] = useState<string[]>([]);
+  const [activeGenres, setActiveGenres] = useState<Genre[]>([]);
 
-  const toggleGenre = (genre: string) => {
+  const toggleGenre = (genre: Genre) => {
     setActiveGenres((prev) =>
-      prev.includes(genre) ? prev.filter((g) => g !== genre) : [...prev, genre],
+      prev.includes(genre)
+        ? prev.filter((g) => g.id !== genre.id)
+        : [...prev, genre],
     );
   };
 
   const search = () => {
-    // TODO api refresh
+    onGenresChange(activeGenres);
   };
 
   return (
@@ -35,9 +41,9 @@ const Filters = () => {
           <div className="f-filter">
             <div className="f-filter-name">Genres</div>
             <div className="f-filter-options">
-              {genreOptions.map((genre) => (
+              {genres.map((genre) => (
                 <MultiSelectFilter
-                  key={genre}
+                  key={genre.id}
                   value={genre}
                   isActive={activeGenres.includes(genre)}
                   onClick={() => toggleGenre(genre)}

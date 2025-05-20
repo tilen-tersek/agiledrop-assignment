@@ -2,7 +2,7 @@
 
 .card {
   border-radius: $card-border-radius;
-  border: 1px solid #e3e3e3;
+  border: 1px solid var(--surface-card);
   overflow: hidden;
   box-shadow: 0 2px 8px rgba(0, 0, 0, .1);
   padding: 1rem;
