@@ -1,0 +1,91 @@
+@use '../../../styles/variables/breakpoints' as *;
+
+.mc-container{
+  display: flex;
+  flex-direction: column;
+  padding: 0;
+
+  .mc-image{
+    display: flex;
+    position: relative;
+    cursor: pointer;
+
+    img{
+      width: 100%;
+    }
+
+    .mc-banner{
+      width: 40px;
+      height: 40px;
+      border-radius: 50px;
+      position: absolute;
+      bottom: -20px;
+      left: 10px;
+    }
+  }
+
+  .mc-data-container{
+    display:flex;
+    flex-direction: column;
+    justify-content: space-around;
+
+    padding: 1.75rem 1rem;
+    overflow: hidden;
+
+    .mc-top-data{
+      display:flex;
+      flex-direction: column;
+      gap: .5rem;
+    }
+    .mc-title{
+      text-transform: capitalize;
+      font-weight: 700;
+      color: var(--text-primary);
+      cursor: pointer;
+
+      &:hover{
+        color: var(--button-primary);
+      }
+    }
+
+    .mc-date {
+      font-size: 0.75rem;
+      opacity: 0.6;
+    }
+
+    .mc-description{
+      display: none;
+      font-size: 0.75rem;
+    }
+  }
+}
+
+@media screen and (max-width: $breakpoint-sm){
+  .mc-container {
+    flex-direction: row;
+    max-height: 150px;
+
+    .mc-title{
+      font-size: 0.85rem;
+    }
+
+    .mc-image {
+      img {
+        width: 100px;
+        object-fit: cover;
+      }
+    }
+
+    .mc-data-container {
+      padding: .85rem;
+
+      .mc-description{
+        display: -webkit-box;
+      }
+    }
+
+  }
+  .mc-banner{
+    display: none;
+  }
+}

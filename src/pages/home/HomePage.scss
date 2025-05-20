@@ -1,0 +1,75 @@
+@use '../../styles/variables/breakpoints' as *;
+
+.hp-container{
+  display:grid;
+  grid-template-rows: 4rem auto;
+
+  .hp-title{
+    font-weight: 500;
+    font-size: 1.6em;
+  }
+
+  .hp-card{
+    background: var(--text-contrast);
+  }
+
+  .hp-content{
+    display:grid;
+    gap: 1.5rem;
+    grid-template-rows: 1fr 1fr;
+  }
+
+  .hp-load-more{
+    border-radius: 8px;
+    width:100%;
+    outline: none;
+    font-size: 1.5rem;
+    font-weight: 700;
+    background: var(--button-primary);
+    color: var(--text-contrast);
+    &:hover{
+      border: 1px solid transparent;
+    }
+  }
+  .hp-no-movies{
+    width:100%;
+    text-align: center;
+    grid-column: span 2;
+    display:flex;
+    align-items: center;
+    justify-content: center;
+  }
+  // Mobile
+  @media screen and (max-width: $breakpoint-sm) {
+    .hp-content{
+      grid-template-columns: 1fr;
+    }
+  }
+  // Mobile, Tablet
+  @media screen and (min-width: $breakpoint-md) {
+    .hp-content{
+      grid-template-columns: repeat(2, 1fr);
+    }
+  }
+
+  // Tablet
+  @media screen and (min-width: $breakpoint-lg) {
+    .hp-content{
+      grid-template-columns: repeat(3, 1fr);
+    }
+  }
+
+  // Desktop
+  @media screen and (min-width: $breakpoint-xl) {
+    .hp-content{
+      grid-template-columns: repeat(4, 1fr);
+    }
+  }
+
+  // Desktop
+  @media screen and (min-width: $breakpoint-2xl) {
+    .hp-content{
+      grid-template-columns: repeat(5, 1fr);
+    }
+  }
+}

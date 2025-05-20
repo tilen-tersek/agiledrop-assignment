@@ -1,0 +1,20 @@
+.msf-container{
+  padding: 4px 12px;
+  border-radius: 50px;
+  border: 1px solid var(--divider-primary);
+  cursor: pointer;
+  -webkit-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+
+  &:hover {
+    background: var(--button-primary);
+    color: var(--text-contrast);
+  }
+
+  &.active{
+    background: var(--button-primary);
+    border: 1px solid var(--button-primary);
+    color: var(--text-contrast);
+  }
+}
