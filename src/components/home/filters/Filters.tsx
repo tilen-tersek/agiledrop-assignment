@@ -19,6 +19,10 @@ const Filters = () => {
     );
   };
 
+  const search = () => {
+    // TODO api refresh
+  };
+
   return (
     <div className="f-container card">
       <div className="f-header" onClick={() => setOpen(!open)}>
@@ -40,6 +44,16 @@ const Filters = () => {
                 />
               ))}
             </div>
+          </div>
+
+          <div className="f-search">
+            <button
+              className="f-button"
+              onClick={() => search()}
+              disabled={activeGenres.length === 0}
+            >
+              Search
+            </button>
           </div>
         </div>
       )}
